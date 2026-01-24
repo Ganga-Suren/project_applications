@@ -1,16 +1,95 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# ResumeTailor.AI
 
-Currently, two official plugins are available:
+A local-first, AI-powered resume generator that helps you craft professional, ATS-optimized resumes tailored to any job description. Built with a React (Vite) frontend and a Python (Flask) backend using Google Gemini (GenAI) for AI resume generation.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Features
+- **AI Resume Generation:** Uses Google Gemini (GenAI) to rewrite and optimize your resume for any job description.
+- **Live Markdown Preview:** See your AI-generated resume in a clean, professional preview before saving.
+- **Local File Storage:** Saves job descriptions and resumes to your local drive (S:/applications/...)( Note: change the drive in your code as per your need )
+- **Modular Backend:** Easily switch between GenAI and ChatGPT/OpenAI in the future.
+- **No Cloud Storage:** All data stays on your machine.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Project Structure
+```
+project_applications/
+├── functions/           # Backend (Python Flask)
+│   ├── app.py           # Main Flask API server
+│   ├── resumeService.py # File save helpers (Python)
+│   ├── masterPrompt.py  # AI prompt template (Python)
+│   ├── masterResume.py  # (Optional) Master resume data (Python)
+│   └── ...
+├── src/                # Frontend (React)
+│   ├── App.jsx          # Main React app
+│   └── ...
+├── public/             # Static assets
+├── .env                # Environment variables (API keys, etc.)
+└── README.md           # This file
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Prerequisites
+- **Python 3.8+** (for backend)
+- **Node.js 16+** (for frontend)
+- **Google Gemini API Key** (for GenAI)
+
+---
+
+## Setup & Run
+
+### 1. Backend (Python Flask)
+1. Open a terminal in `project_applications/functions`.
+2. Install dependencies:
+	```
+	pip install flask flask-cors google-genai
+	```
+3. Set your Gemini API key in `.env` (or directly in `app.py`):
+	```
+	GENAI_API_KEY=your-google-genai-api-key
+	```
+4. Run the backend:
+	```
+	python app.py
+	```
+	The backend will start on [http://localhost:3000](http://localhost:3000)
+
+### 2. Frontend (React)
+1. Open a terminal in `project_applications`.
+2. Install dependencies:
+	```
+	npm install
+	```
+3. Start the frontend:
+	```
+	npm run dev
+	```
+	The frontend will start on [http://localhost:5173](http://localhost:5173)
+
+---
+
+## How It Works
+- Enter the company, role, and job description in the React UI.
+- The frontend sends your data to the Flask backend (`/api/generate-resume`).
+- The backend uses Google Gemini (GenAI) to generate a tailored resume in markdown.
+- The frontend displays a live, professional preview.
+- You can save the resume locally for future use.
+
+---
+
+## Switching to ChatGPT/OpenAI (Future)
+- The backend is modular: you can swap out the GenAI logic for OpenAI/ChatGPT by updating the backend implementation.
+- The frontend API contract will remain the same.
+
+---
+
+## Notes
+- All files are saved locally (S:/applications/...).
+- No data is sent to any cloud storage except for AI API calls.
+- For best results, use a valid Google Gemini API key.
+
+---
