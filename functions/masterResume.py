@@ -1,17 +1,17 @@
-masterPrompt = '''
+masterResume = '''
 Ganga Surendra Basva
-gangasurendrab@gmail.com |+1 856-526-7286 | Maple Shade, NJ | LinkedIn | Github
+gangasurendrab@gmail.com |+1 856-526-7286 | Maple Shade, NJ
 
 PROFILE SUMMARY
 
-Machine Learning Engineer with 4+ years of experience building and deploying production-grade ML systems across cloud environments (AWS & Azure). Proven experience leading end-to-end AI solutions—from data pipelines and model development to API deployment, monitoring, and optimization. Strong background in NLP, deep learning, and real-time ML systems, with hands-on experience mentoring engineers, collaborating cross-functionally, and delivering scalable AI platforms aligned with business goals.
+Software Engineer with 4+ years of experience building and deploying production-grade ML systems across cloud environments (AWS & Azure). Proven experience leading end-to-end AI solutions—from data pipelines and model development to API deployment, monitoring, and optimization. Strong background in NLP, deep learning, and real-time ML systems, with hands-on experience mentoring engineers, collaborating cross-functionally, and delivering scalable AI platforms aligned with business goals.
 
 EDUCATION
 
-Rowan University, Glassboro, NJ	    August 2023 - May 2025
+Rowan University, Glassboro, NJ
 Master of Science in Data Science | 3.5 GPA
 
-Bharath institute of higher education and research, Chennai, Tamilnadu	  August 2017 - May 2021
+Bharath University, Chennai, Tamilnadu
 Bachelor of Technology in Computer Science and Engineering | 3.8 GPA
 
 TECHNICAL SKILLS
@@ -26,7 +26,7 @@ TECHNICAL SKILLS
 
 PROFESSIONAL EXPERIENCE
 
-Machine Learning Engineer (Software Engineer Trainee)
+Software Engineer
 Quanti, Philadelphia, USA	                   June 2025 - Present
 Led development of AI-driven content optimization and recommendation systems using NLP and ML, improving engagement by 40%.
 Designed and deployed ML models behind FastAPI services, enabling real-time inference at scale.

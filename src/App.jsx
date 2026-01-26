@@ -3,21 +3,34 @@ function parseMarkdownSections(markdown) {
   const lines = markdown.split('\n');
   const sections = [];
   let currentSection = null;
+  let preface = [];
 
   lines.forEach(line => {
+    // Remove asterisks from headings/subheadings (e.g., '**PROFESSIONAL SUMMARY**' → 'PROFESSIONAL SUMMARY')
     if (line.startsWith('## ')) {
+      let header = line.replace('## ', '').trim();
+      if (header.startsWith('**') && header.endsWith('**')) header = header.slice(2, -2).trim();
       if (currentSection) sections.push(currentSection);
-      currentSection = { header: line.replace('## ', '').trim(), subheaders: [], bullets: [], paragraphs: [] };
+      else if (preface.length > 0) {
+        // Treat pre-header text as 'About' section
+        sections.push({ subheaders: [], bullets: [], paragraphs: preface });
+        preface = [];
+      }
+      currentSection = { header, subheaders: [], bullets: [], paragraphs: [] };
     } else if (line.startsWith('### ')) {
-      if (currentSection) currentSection.subheaders.push(line.replace('### ', '').trim());
+      let sub = line.replace('### ', '').trim();
+      if (sub.startsWith('**') && sub.endsWith('**')) sub = sub.slice(2, -2).trim();
+      if (currentSection) currentSection.subheaders.push(sub);
     } else if (line.startsWith('- ')) {
       if (currentSection) currentSection.bullets.push(line.replace('- ', '').trim());
     } else if (line.trim() !== '') {
       // Add plain text lines as paragraphs
       if (currentSection) currentSection.paragraphs.push(line.trim());
+      else preface.push(line.trim());
     }
   });
   if (currentSection) sections.push(currentSection);
+  else if (preface.length > 0) sections.push({ header: 'About', subheaders: [], bullets: [], paragraphs: preface });
   return sections;
 }
 
@@ -26,22 +39,23 @@ function renderResumePreview(sections) {
   return (
     <div>
       {sections.map((section, idx) => (
-        <div key={idx} style={{ marginBottom: 24 }}>
-          <div style={{ fontWeight: 'bold', fontSize: 18, marginBottom: 8 }}>{section.header}</div>
+        <div key={idx} style={{ marginBottom: 10 }}>
+          {/* Section Header: bold, 12pt, compact spacing */}
+          <div style={{ fontWeight: 'bold', fontSize: 12, marginBottom: 2, marginTop: 2, letterSpacing: 0 }}>{section.header}</div>
           {section.subheaders.map((sub, i) => (
-            <div key={i} style={{ fontWeight: 'bold', fontSize: 15, marginBottom: 4 }}>{sub}</div>
+            <div key={i} style={{ fontWeight: 'bold', fontSize: 11, marginBottom: 1, marginTop: 1 }}>{sub}</div>
           ))}
           {section.paragraphs && section.paragraphs.length > 0 && (
-            <div style={{ marginLeft: 0, marginBottom: 8 }}>
+            <div style={{ marginLeft: 0, marginBottom: 2 }}>
               {section.paragraphs.map((para, k) => (
-                <div key={k} style={{ fontSize: 14, marginBottom: 4 }}>{para}</div>
+                <div key={k} style={{ fontSize: 10, marginBottom: 1 }}>{para}</div>
               ))}
             </div>
           )}
           {section.bullets.length > 0 && (
-            <ul style={{ marginLeft: 24, marginBottom: 0 }}>
+            <ul style={{ marginLeft: 18, marginBottom: 0, paddingLeft: 0 }}>
               {section.bullets.map((bullet, j) => (
-                <li key={j} style={{ marginBottom: 4, fontSize: 14 }}>{bullet}</li>
+                <li key={j} style={{ marginBottom: 1, fontSize: 10, paddingLeft: 0 }}>{bullet}</li>
               ))}
             </ul>
           )}
@@ -253,7 +267,7 @@ const App = () => {
             {/* Right: Preview and Actions */}
             <div style={{ flex: 1, minWidth: 400, background: '#fff', borderRadius: 12, boxShadow: '0 2px 16px #0001', padding: 32, margin: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <h3 style={{ fontWeight: 700, fontSize: 24, color: '#6366f1', marginBottom: 8, textAlign: 'center', marginTop: 0 }}>Preview</h3>
-              {resumeMarkdown && (() => {
+              {resumeMarkdown ? (() => {
                 // Parse markdown and render professional preview
                 const sections = parseMarkdownSections(resumeMarkdown);
                 return (
@@ -265,9 +279,9 @@ const App = () => {
                         padding: '8px 8px 0 8px',
                         border: '1px solid #e5e7eb',
                         height: 520,
-                        width: 420,
-                        minWidth: 420,
-                        maxWidth: 420,
+                        width: 460,
+                        minWidth: 460,
+                        maxWidth: 460,
                         boxShadow: '0 2px 8px #0001',
                         marginBottom: 0,
                         fontSize: 14,
@@ -308,7 +322,29 @@ const App = () => {
                     </div>
                   </>
                 );
-              })()}
+              })() : (
+                <div style={{
+                  background: '#f9fafb',
+                  borderRadius: 8,
+                  padding: '8px 8px 0 8px',
+                  border: '1px solid #e5e7eb',
+                  height: 520,
+                  width: 460,
+                  minWidth: 460,
+                  maxWidth: 460,
+                  boxShadow: '0 2px 8px #0001',
+                  marginBottom: 0,
+                  fontSize: 16,
+                  fontFamily: 'Calibri, Arial, Times New Roman, sans-serif',
+                  color: '#888',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  textAlign: 'center',
+                }}>
+                  No preview available
+                </div>
+              )}
             </div>
           </div>
       </div>
