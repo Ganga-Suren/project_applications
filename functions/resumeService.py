@@ -81,9 +81,8 @@ def markdown_to_docx(markdown_content, docx_path):
         # Section Header (##)
         if line.startswith('## '):
             header_text = line[3:].strip()
-            # Remove surrounding ** if present (e.g., '**PROFESSIONAL SUMMARY**')
-            if header_text.startswith('**') and header_text.endswith('**'):
-                header_text = header_text[2:-2].strip()
+            # Remove all leading/trailing asterisks and spaces (e.g., '**Software Engineer**', '*Software Engineer*')
+            header_text = header_text.strip('*').strip()
             para = doc.add_paragraph()
             run = para.add_run(header_text)
             run.bold = True
@@ -96,8 +95,7 @@ def markdown_to_docx(markdown_content, docx_path):
         # Subheader (###)
         if line.startswith('### '):
             subheader_text = line[4:].strip()
-            if subheader_text.startswith('**') and subheader_text.endswith('**'):
-                subheader_text = subheader_text[2:-2].strip()
+            subheader_text = subheader_text.strip('*').strip()
             para = doc.add_paragraph()
             run = para.add_run(subheader_text)
             run.bold = True
