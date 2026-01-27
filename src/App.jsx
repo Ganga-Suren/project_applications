@@ -1,3 +1,4 @@
+import ResumeUpload from './components/ResumeUpload';
 // Utility: Parse markdown into structured sections
 function parseMarkdownSections(markdown) {
   const lines = markdown.split('\n');
@@ -142,13 +143,10 @@ const App = () => {
       `}</style>
       <div style={{ textAlign: 'center', paddingTop: 10, paddingBottom: 5 }}>
         <h1 style={{ color: '#6366f1', fontSize: 38, fontWeight: 700, margin: 0, letterSpacing: '-2px' }}>ResumeTailor.AI</h1>
-        <div style={{ color: '#6b7280', fontSize: 10, marginTop: 8, marginBottom: 12 }}>
-          Transform your master resume into a job-winning application.
-        </div>
       </div>
       <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'flex-start' }}>
           <div style={{ flex: 1, display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start', gap: 32 }}>
-            {/* Left: Input Form */}
+            {/* Left: Upload Resume & Input Form */}
             <div style={{ maxWidth: 480, width: '100%', background: '#fff', borderRadius: 12, boxShadow: '0 2px 16px #0001', padding: 40, margin: 4 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                 <h2 style={{ fontWeight: 700, fontSize: 28, marginBottom: 8, color: '#8c800f', marginRight: 4 }}>Create Your Tailored Resume</h2>
@@ -168,8 +166,8 @@ const App = () => {
                   <i className="fa-solid fa-arrow-rotate-right" style={{ fontSize: 22, color: '#6366f1' }}></i>
                 </span>
               </div>
-              <div style={{ color: '#6b7280', marginBottom: 28 }}>
-                Enter the job details below to let our AI craft a perfectly tailored resume for you.
+              <div style={{ marginBottom: 28 }}>
+                <ResumeUpload onUpload={() => window.location.reload()} />
               </div>
               <label style={{ fontWeight: 600, marginBottom: 4, display: 'block', color: '#22292f'}} htmlFor="companyName">
                 Company Name <span style={{ color: 'red' }}>*</span>

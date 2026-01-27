@@ -1,3 +1,9 @@
+from werkzeug.utils import secure_filename
+import io
+import pdfplumber
+import PyPDF2
+import docx
+from markdownify import markdownify as mdify
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -7,15 +13,51 @@ import sys
 # Load environment variables from .env
 from dotenv import load_dotenv
 load_dotenv()
-from masterPrompt import masterPrompt
+
+def read_md_file(filename):
+    with open(filename, encoding='utf-8') as f:
+        return f.read()
+
+masterPrompt = read_md_file(os.path.join(os.path.dirname(__file__), 'masterPrompt.md'))
+masterResume = read_md_file(os.path.join(os.path.dirname(__file__), 'masterResume.md'))
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from resumeService import saveJD, saveResumeDocx
-from masterResume import masterResume
 
 
 app = Flask(__name__)
 CORS(app)
 client = genai.Client(api_key=os.getenv("GENAI_API_KEY"))
+
+# --- Upload Resume Endpoint ---
+# POST /api/upload-resume
+# Accepts PDF or DOC/DOCX file, converts to Markdown, saves to masterResume.md
+@app.route('/api/upload-resume', methods=['POST'])
+def upload_resume():
+    if 'file' not in request.files:
+        return jsonify({'error': 'No file part'}), 400
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({'error': 'No selected file'}), 400
+    filename = secure_filename(file.filename)
+    ext = os.path.splitext(filename)[1].lower()
+    text = ''
+    try:
+        if ext == '.pdf':
+            with pdfplumber.open(io.BytesIO(file.read())) as pdf:
+                text = '\n'.join(page.extract_text() or '' for page in pdf.pages)
+        elif ext in ['.doc', '.docx']:
+            doc = docx.Document(io.BytesIO(file.read()))
+            text = '\n'.join([p.text for p in doc.paragraphs])
+        else:
+            return jsonify({'error': 'Unsupported file type'}), 400
+        # Convert to Markdown
+        md = mdify(text)
+        md_path = os.path.join(os.path.dirname(__file__), 'masterResume.md')
+        with open(md_path, 'w', encoding='utf-8') as f:
+            f.write(md)
+        return jsonify({'message': 'Resume uploaded and converted to Markdown.'})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 @app.route('/api/save-jd', methods=['POST'])
 def save_jd():

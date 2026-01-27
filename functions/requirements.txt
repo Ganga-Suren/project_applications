@@ -2,3 +2,5 @@ flask
 flask-cors
 google-genai
 python-docx
+markdownify
+PyPDF2
