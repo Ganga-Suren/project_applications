@@ -1,78 +1,72 @@
-GangaSurendraBasva
-gangasurendrab@gmail.com|+1 856-526-7286|MapleShade,NJ|LinkedIn|Github
-PROFILESUMMARY
-DataScientist&DataEngineerwith4+yearsofexperiencedesigninganddeployingdata-drivensolutions,buildingscalableETLpipelines,
-andimplementingmachinelearningmodels.ProficientinPython,SQL,Spark,cloud-nativeplatforms(AWS,Azure),anddatavisualization
-tools.Experiencedinpredictivemodeling,real-timeanalytics,andintegratingMLpipelinesintoproductionsystems.Passionateabout
-turningcomplexdatasetsintoactionableinsights.
-EDUCATION
-RowanUniversity,Glassboro,NJ August2023-May2025
-MasterofScienceinDataScience|3.5GPA
-Bharathinstituteofhighereducationandresearch,Chennai,Tamilnadu August2017-May2021
-BachelorofTechnologyinComputerScienceandEngineering|3.8GPA
-TECHNICALSKILLS
- Programming&Analytics:Python,R,SQL,C#,PySpark,NumPy,Pandas.
- MachineLearning&AI:TensorFlow,Keras,PyTorch,Scikit-learn,CNN,GraphNeuralNetworks.
- DataEngineering&Cloud:Spark,Hadoop,Kafka,ETL,AWS(S3,EC2,Lambda,Glue,Kinesis),Azure,Docker,CI/CD.
- Visualization:Tableau,PowerBI,D3.js,Matplotlib,Seaborn.
- Databases:MySQL,PostgreSQL,MongoDB,Redis,Neo4j.
- OtherTools:Git,Linux,Windows,VSCode,Agile.
-PROFESSIONALEXPERIENCE
-SoftwareEngineerTrainee
-Quanti,Philadelphia,USA June2025-Present
- DevelopanintegratedcontentandadmanagementplatformusingVue.js,FastAPI,andPostgreSQL,enablingseamless
-postingtomultiplesocialmediaplatforms.
- DevelopandoptimizedRESTfulAPIsforseamlessintegrationwithLinkedIn,X,TikTok,andothersocialmediachannels,
-enablingautomatedingestionandprocessingofcontentmetadataandperformancemetrics.
- IntegratedAI-basedcontentrecommendationandoptimizationmodules,leveragingNLPandMLalgorithmstoenhanceuser
-engagement,increasingcontentinteractionmetricsby40%.
- DesignedandimplementedETLpipelinesforscheduling,processing,andstoringhigh-volumecontentandaddatasets,ensuring
-consistency,reliability,andanalytics-readyformats.
- Collaboratewithproductandmarketingteamstodeliverfeaturesontime,usingAgilemethodologiesandCI/CDpipelinesfor
-fasterreleases.
-SoftwareEngineer
-TataElxsi,Bengaluru,India August2020-August2023
- DesignedandoptimizedscalableETLpipelinesandreal-timedatastreamingsolutions(Kafka,AWSKinesis),improvingdata
-processingefficiencyby30%.
- DevelopedanddeployedRESTfulAPIsandmicroservicesforinternaldataplatforms,increasingaccessibilityandusabilityof
-businessdataby25%.
- EngineeredpredictivemaintenancesolutionsusingIoTsensordata,resultingin20%reductioninsystemdowntime.
- DeployedcontainerizeddataapplicationsusingDocker,ensuringscalableandreproducibleanalyticsenvironmentsin
-production.
-SoftwareDeveloperIntern
-Sutherlands,Tamilnadu,India July2019-May2020
- BuiltautomationscriptsinPython/Excelmacrostostreamlinecustomersupportprocesses,reducinghandlingtimeby20%..
- Assistedinbuildingdashboardsandvisualizationstomonitorcustomerinteractionsandserviceefficiency.
- Participatedindebugging,featureenhancements,anddatavalidationtasks,gaininghands-onexperiencewithSQLandPython
-analyticsworkflows.
- Documentedandstreamlineddatapipelinesandreportingprocessesforinternalteams,enhancingaccessibilityandusabilityof
-businessintelligencereports.
- Applieddata-driveninsightstoidentifybottlenecksandoptimizecustomersupportprocesses,improvingoveralloperational
-efficiency.
-PROJECTS
-EarlyPredictionofAlzheimer'sDisease|Python,TensorFlow,FlaskAPI,Keras,CNN January2019-April2019
- BuiltandtrainedaCNNmodelonMRIdatasetstodetectearly-stageAlzheimer’s,achieving85%predictionaccuracy.
- DesignedaFlask-basedRESTAPIforreal-timemodelinference,enablingintegrationintoclinicaldecisionworkflows.
- Implementeddatapreprocessingpipelinesincludingnormalization,augmentation,andcleaningtoimprovemodelperformance.
- ContainerizedthesolutionwithDockerforscalabledeploymentandreproducibilityindifferentenvironments.
- Addedrobustlogging,errorhandling,andinputvalidation,ensuringproduction-readinessandreliablepredictionsinreal-worldscenarios.
-VASTChallengeMC3|ApacheSpark,Hadoop,GraphNeuralNetworks,Tableau,D3.js September2023-November2023
- Analyzedandprocessedlarge-scaledatasets(10+GBstructured/unstructureddata)usingApacheSparkandHadoop,
-significantlyenhancingdatamanagementefficiency.
- ImplementedaGraphNeuralNetwork(GNN)servicetouncoverhiddenrelationships,boostinginsightaccuracyby
-35%.
- DeployedinteractivedashboardswithTableauandD3.jstoprovidescalable,real-timeanalyticstoendusers.
- Optimizeddatavalidation,cleansing,andfeatureengineeringpipelines,ensuringhigh-qualityinputforanalyticsand
-MLmodels.
- Designedmodular,reusablecodetosupportlarge-scaledataprocessingworkflowsandacceleratefutureanalytics
-projects.
-NFLRunningBackPerformancePrediction|WebScraping,Python,FastAPI,PowerBI September2024-November2024
- CollectedandanalyzedNFLperformancedatasets(40+variables)fromwebsources(NFL,PFF)usingPythonwebscraping
-techniques,improvingdatasetqualityandcompleteness.
- Builtpredictivemodels(RandomForest,LinearRegression)toforecastplayerperformanceandexposedresultsvia
-FastAPIendpoints.
- Designedaninteractive,real-timedashboardsusingPowerBI,resultingina25%improvementinstrategicdecision-
-makingforteams,scouts,andfantasyfootballusers.
- Implementeddatavalidation,errorhandling,andautomatedreportingpipelines,ensuringreliableandactionable
-predictions.
- OptimizedbackendandMLpipelinesforlow-latencyAPIresponsesandscalableprocessingoflargedatasets.
+# Ganga Surendra Basva
+
+gangasurendrab@gmail.com
++1 856-526-7286  
+Maple Shade, NJ  
+
+---
+
+## PROFILE SUMMARY
+
+Software Engineer with 4+ years of experience building scalable applications, APIs, and data-driven systems. Skilled in Python, Java, SQL, and cloud-native development (AWS, Azure). Proven ability to design and deploy production-ready software, optimize performance, and integrate machine learning pipelines into real-time applications. Passionate about developing reliable, maintainable, and impactful software solutions.
+
+---
+
+## EDUCATION
+  
+*Master of Science in Data Science*
+**Rowan University**, Glassboro, NJ | **GPA: 3.6**
+ 
+*Bachelor of Technology in Computer Science and Engineering*
+**Bharath University**, Chennai, Tamil Nadu | **GPA: 3.8**
+
+---
+
+## TECHNICAL SKILLS
+
+- **Programming:** Python, R, SQL  
+- **Frameworks & Libraries:** FastAPI, .NET, Angular, TypeScript, TensorFlow, Keras, PyTorch, NumPy, Pandas  
+- **Data Engineering & Cloud:** Spark, Kafka, ETL, AWS (EC2, S3, Lambda), Azure, Docker, CI/CD  
+- **Databases:** MySQL, MongoDB, Redis, Neo4j, PostgreSQL  
+- **Visualization:** Tableau, Power BI, D3.js, Matplotlib, Seaborn  
+- **Other Tools:** Git, Version Control, Docker, CI/CD Pipelines, VS Code, Linux, Windows, HTML, CSS  
+
+---
+
+## PROFESSIONAL EXPERIENCE
+
+### Software Engineer Trainee  
+**Quanti**, Philadelphia, USA  
+*June 2025 – Present*
+
+- Developed an integrated content and ad management platform using Vue.js, FastAPI, and PostgreSQL, enabling seamless posting to multiple social media platforms.
+- Built and optimized RESTful APIs for social platform integrations (LinkedIn, X, TikTok), ensuring secure and scalable communication.
+- Led end-to-end development of content management and ad automation workflows, serving as the primary engineer on the project.
+- Integrated AI-powered assistants to help customers generate, schedule, and optimize posts, improving user engagement and efficiency by 40%.
+- Collaborated with product and marketing teams to deliver features on time using Agile methodologies and CI/CD pipelines.
+
+---
+
+### Software Engineer  
+**Tata Elxsi**, Bengaluru, India  
+*August 2020 – August 2023*
+
+- Designed and developed scalable backend services and APIs using .NET and REST principles to support enterprise web applications.
+- Built and optimized data-driven APIs consumed by frontend applications developed with TypeScript-based frameworks.
+- Collaborated closely with frontend teams to define API contracts, data models, and integration patterns.
+- Engineered real-time data processing and integration workflows supporting dashboard and monitoring applications.
+- Deployed and maintained containerized (.NET-based) services using Docker in production, improving deployment reliability and turnaround time by 20%.
+
+---
+
+### Software Developer Intern  
+**Sutherlands**, Tamil Nadu, India  
+*July 2019 – May 2020*
+
+- Built automation scripts using Python and Excel macros to streamline customer support processes, reducing handling time by 20%.
+- Assisted in maintaining internal tools and dashboards used by customer success teams.
+- Participated in debugging and feature enhancement discussions, gaining exposure to SDLC and Agile workflows.
+- Collaborated with cross-functional teams to document software issues and implement solutions, improving reporting accuracy.
+- Applied programming logic to real-world business problems, strengthening problem-solving skills relevant to software development.
+
+---

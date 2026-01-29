@@ -39,11 +39,11 @@ export default function ResumeUpload({ onUpload }) {
   };
 
   return (
-    <form onSubmit={handleUpload} style={{ marginBottom: 20, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 8 }}>
-      <label style={{ fontWeight: 500, marginBottom: 2 }} htmlFor="resume-upload-input">
+    <form onSubmit={handleUpload} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 8, width: '100%' }}>
+      <label style={{ fontWeight: 500, marginBottom: 2, color: '#444' }} htmlFor="resume-upload-input">
         Upload Resume (PDF, DOC, DOCX):
       </label>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, width: '100%' }}>
         <label htmlFor="resume-upload-input" style={{
           border: '2px solid #6366f1',
           borderRadius: 6,
@@ -54,7 +54,7 @@ export default function ResumeUpload({ onUpload }) {
           outline: 'none',
           display: 'flex',
           alignItems: 'center',
-          minWidth: 220,
+          width: '100%',
           position: 'relative',
         }}>
           <span style={{ color: '#444', fontWeight: 500, flex: 1 }}>
